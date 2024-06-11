@@ -1,6 +1,11 @@
 import './assets/main.css';
 import PrimeVue from 'primevue/config';
 import aura from './presets/aura';
+import 'primeicons/primeicons.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -35,6 +40,8 @@ import AutoComplete from 'primevue/autocomplete';
 
 const app = createApp(App)
 
+library.add(faUserSecret)
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('DataTable', DataTable)
 app.component('Column', Column)
 app.component('ColumnGroup', ColumnGroup)
